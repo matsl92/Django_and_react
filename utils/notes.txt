@@ -1,0 +1,32 @@
+DONE
+
+Database can be modified by an external agent through rest_api app.
+
+front_end app is already set and added to installed apps. Now it's time to 
+integrate with react.
+
+
+
+
+
+
+
+
+
+Client json 
+
+{
+"first_name": "Mateo", 
+"last_name": "Salazar", 
+"email": "mateoslb70@gmail.com", 
+"phone_number": "+57 3197012975"
+}
+
+
+Product json
+
+{
+"name": "Product 1", 
+"description": "This is the first product", 
+"unit_price": 40000
+}
