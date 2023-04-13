@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework', 
     # Our own
     'rest_api',
-    'front_end', 
+    'front_end',
 ]
 
 MIDDLEWARE = [
