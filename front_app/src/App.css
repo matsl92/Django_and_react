@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.listItem {
+  /* background-color: #b8c5c9; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 43px;
+  margin: 0 0 3px 0;
+}
+
+.client {
+  display: block;
+  height: 25px;
+  width: 45vw;
+  text-decoration: none;
+  color: black;
+}
+
+.clientField {
+  background-color: aliceblue;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clientField span {
+  /* background-color: rgb(201, 230, 255); */
+  height: 85%;
+  width: 95%;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  display: block;
+  height: 35px;
+  width: 110px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.5em;
+  text-decoration: none;
+  color: black;
+}
+
+.buttonSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  /* background-color: rgb(196, 252, 252); */
+  padding: 0 7px
+}
+
+.buttonSection.oneButtonSection {
+  justify-content: flex-end;
+}
+
+
+
+.primary {
+  background-color: #9bdff1;
+}
+
+.edit {
+  background-color: rgb(255 235 114);
+}
+
+.danger {
+  background-color: #fb7272;
+}
+
+.success {
+  background-color: #62c562;
+}
+
+input {
+  width: 75px;
+}
+
+.formField {
+  display: flex;
+  /* background-color: #bcd6db; */
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.formLabel {
+  /* background-color: #d4dee1; */
+  height: 80%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formInput {
+  background-color: #dce7eb;
+  height: 80%;
+  border-style: none;
+  width: 60%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
