@@ -61,7 +61,9 @@ ROOT_URLCONF = 'ecommerce.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'front_app/build'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,11 +126,25 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'front_app/build/static/'
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000']
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000', 'http://127.0.0.1:8000']
 
 # CORS_ALLOW_ALL_ORIGINS =  True
+
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000']
+
+# CSRF_COOKIE_SECURE = True
+
+# CSRF_COOKIE_HTTPONLY = True
+
+# SESSION_COOKIE_SECURE = True
+
+# SESSION_COOKIE_SAMESITE = 'None'

@@ -16,14 +16,28 @@ export default function CreateClient() {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
 
+    const getToken = async () => {
+        const response = await fetch('http://127.0.0.1:8000/api/get_token')
+        const data = await response.json();
+        const token = data.token;
+        console.log(token);
+        return token;
+    }
+
     const createClient = async () => {
+
+        const token = getToken();
+        console.log('alrightttt');
+        console.log(token, token.length);
         const response = await fetch(
             'http://127.0.0.1:8000/api/client/create',
             {
                 method: 'POST',
+                mmode: 'same-origin',
                 cors: 'cors',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    'X-CSRFToken': token
                 },
                 body: JSON.stringify(creationFormFields)
             }

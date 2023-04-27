@@ -15,4 +15,6 @@ urlpatterns = [
     path('product/read/<int:id>', views.read_product), 
     path('product/update/<int:id>', views.update_product), 
     path('product/delete/<int:id>', views.delete_product),
+    
+    path('get_token', views.get_token_view)
 ]

@@ -2,13 +2,14 @@ DONE
 
 Database can be modified by an external agent through rest_api app.
 
-front_end app is already set and added to installed apps. Now it's time to 
-integrate with react.
+React app is not allowed to make post requests due to invalid csrf token.
 
 
 
 
 
+
+I am using react inside a django project but when I try to create add a row to the database I get the following error: 
 
 
 

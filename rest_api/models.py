@@ -6,6 +6,9 @@ class Client(models.Model):
     last_name = models.CharField('Apellido', max_length=100) 
     email = models.EmailField('Correo')
     phone_number = models.CharField('Celular', max_length=30)
+    
+    def __str__(self):
+        return self.first_name
 
 class Product(models.Model):
     name = models.CharField('Nombre', max_length=100)
