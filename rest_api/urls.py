@@ -10,11 +10,12 @@ urlpatterns = [
     path('client/delete/<int:id>', views.delete_client), 
     
     #Product model (Table)
-    path('client/list', views.list_products), 
+    path('product/list', views.list_products), 
     path('product/create', views.create_product), 
     path('product/read/<int:id>', views.read_product), 
     path('product/update/<int:id>', views.update_product), 
     path('product/delete/<int:id>', views.delete_product),
     
-    path('get_token', views.get_token_view)
+    path('get_token', views.get_token_view), 
+    path('product/<int:id>', views.product_detail)
 ]

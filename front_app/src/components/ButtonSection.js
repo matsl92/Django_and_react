@@ -11,11 +11,22 @@ function ButtonSection() {
     
     const navigate = useNavigate();
 
+    const getToken = async () => {
+        const response = await fetch('http://127.0.0.1:8000/api/get_token')
+        const data = await response.json();
+        const token = data.token;
+        console.log('token returned by backend:', token);
+        return token;
+    }
+
     async function deleteClient(id) {
         const response = await fetch(
             `http://127.0.0.1:8000/api/client/delete/${id}`,
             {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    'X-CSRFToken': await getToken()
+                }
             }
         );
         const data = await response.json();

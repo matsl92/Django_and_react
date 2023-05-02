@@ -1,33 +1,30 @@
+TO DO
+
+Create main react components for e-commerce
+
+
+
+
 DONE
 
 Database can be modified by an external agent through rest_api app.
 
-React app is not allowed to make post requests due to invalid csrf token.
+React app is allowed to make more than just get requests getting a token from the backend
 
 
 
+API ENDPOINTS
 
+Client model (table)
+api/client/list 
+api/client/create
+api/client/read/id
+api/client/update/id
+api/client/delete/id
 
-
-I am using react inside a django project but when I try to create add a row to the database I get the following error: 
-
-
-
-
-Client json 
-
-{
-"first_name": "Mateo", 
-"last_name": "Salazar", 
-"email": "mateoslb70@gmail.com", 
-"phone_number": "+57 3197012975"
-}
-
-
-Product json
-
-{
-"name": "Product 1", 
-"description": "This is the first product", 
-"unit_price": 40000
-}
+Product model (Table)
+api/product/list
+api/product/create
+api/product/read/id
+api/product/update/id
+api/product/delete/id

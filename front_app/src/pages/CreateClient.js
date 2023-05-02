@@ -20,15 +20,13 @@ export default function CreateClient() {
         const response = await fetch('http://127.0.0.1:8000/api/get_token')
         const data = await response.json();
         const token = data.token;
-        console.log(token);
+        console.log('token returned by backend:', token);
         return token;
     }
 
-    const createClient = async () => {
+    async function createClient() {
 
-        const token = getToken();
-        console.log('alrightttt');
-        console.log(token, token.length);
+        const token = await getToken();
         const response = await fetch(
             'http://127.0.0.1:8000/api/client/create',
             {
@@ -45,7 +43,6 @@ export default function CreateClient() {
 
         const data = await response.json();
 
-        console.log(data);
         context.getClients();
         navigate('/');
     }

@@ -13,6 +13,14 @@ export default function CreateClient() {
     const setUpdatingFormFields = useContext(appContext).setUpdatingFormFields;
     const clients = useContext(appContext).clients;
 
+    const getToken = async () => {
+        const response = await fetch('http://127.0.0.1:8000/api/get_token')
+        const data = await response.json();
+        const token = data.token;
+        console.log('token returned by backend:', token);
+        return token;
+    }
+
     const updateClient = async () => {
         const response = await fetch(
             `http://127.0.0.1:8000/api/client/update/${parseInt(params.id)}`,
@@ -20,15 +28,14 @@ export default function CreateClient() {
                 method: 'PUT',
                 cors: 'cors',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    'X-CSRFToken': await getToken()
                 },
                 body: JSON.stringify(updatingFormFields)
             }
         );
 
         const data = await response.json();
-
-        console.log('data', data);
         context.getClients();
         navigate('/');
     }
@@ -40,14 +47,14 @@ export default function CreateClient() {
                 method: 'DELETE',
                 cors: 'cors',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    'X-CSRFToken': await getToken()
                 },
             }
         );
 
         const data = await response.json();
 
-        console.log(data);
         context.getClients();
         navigate('/');
 
