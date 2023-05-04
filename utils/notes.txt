@@ -2,6 +2,24 @@ TO DO
 
 Create main react components for e-commerce
 
+React components
+•	ListItem
+•	ItemDetail
+•	ShippingInfo
+•	CartItem
+•	Navbar
+
+React pages
+•	Cart
+•	ProductDetail
+•	ItemList
+•	Home 
+
+
+•	Login
+•	Register
+
+
 
 
 

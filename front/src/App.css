@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: rgb(255, 255, 255);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.listItem {
+  position: relative;
+  padding: 7px;
+  margin-top: 70px;
+  width: 300px;
+  border-radius: 5px;
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.newLabel {
+  position: absolute;
+  background-color: aquamarine;
+  font-size: 1.4em;
+  width: 90px;
+  height: 40px;
+  border-radius: 50% 0 50% 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* .itemCard {
+  background-color: rgb(204, 222, 245);
+} */
+
+.listItemTextContainer {
+  margin: 20px 0px 10px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.cartControls {
+  display: flex;
+  justify-content: space-around;
+  margin: 22px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(200deg);
-  }
+.cartControls > button {
+  width: 50%;
 }
+
+.quantityControls {
+  display: flex;
+  justify-content: space-around;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(81 92 104);
+  width: 45%;
+}
+
+.quantityControls button {
+  width: 45px;
+  border: none;
+  background: none;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.quantityControls p {
+  display: flex;
+  border: 0;
+}
+
