@@ -1,16 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar';
-import ListItem from './components/ListItem';
-import ItemList from './components/ItemList';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Store from './pages/Store';
+import Test from './pages/Test';
+import { AppProvider } from './context/AppContext';
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      {/* <ListItem /> */}
-      <ItemList />
-    </div>
+    <AppProvider>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/store' element={<Store />}></Route>
+        <Route path='/test' element={<Test />}></Route>
+      </Routes>
+    </AppProvider>
   );
 }
 

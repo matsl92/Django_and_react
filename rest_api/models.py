@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from datetime import date
+from datetime import date, timedelta, datetime
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Client(models.Model):
@@ -43,6 +43,11 @@ class Product(models.Model):
         default=149900, 
         null=True, 
         blank=True
+    )
+    
+    created_at = models.DateTimeField(
+        'Fecha y hora en que se agregó',
+        auto_now_add=True,
     )
     
     expiration_date = models.DateField(
@@ -109,3 +114,11 @@ class Product(models.Model):
         null=True, 
         blank=True
     )
+    
+    is_new = models.BooleanField(default=True)
+    
+    def save(self):
+        super().save()
+        self.is_new = self.created_at + timedelta(days=1) > timezone.now() 
+        super().save()
+        

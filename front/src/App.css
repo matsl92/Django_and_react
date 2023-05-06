@@ -8,13 +8,14 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+.under-navbar {
+  margin-top: 56px;
+}
+
 .listItem {
-  position: relative;
   padding: 7px;
-  margin-top: 70px;
   width: 300px;
   border-radius: 5px;
-  display: inline-block;
 }
 
 .newLabel {
