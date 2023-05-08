@@ -7,7 +7,6 @@ function Store() {
   return (
     <div>
       <Navbar />
-      <h1>{CurrencyFormater(150000)}</h1>
       <ItemList />
     </div>
   )

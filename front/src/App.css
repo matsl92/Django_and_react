@@ -8,8 +8,107 @@ body {
   background-color: rgb(255, 255, 255);
 }
 
+.myContainer {
+  height: 100vh;
+  background-color: aquamarine;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.scroll {
+  height: 70vh;
+  background-color: aqua;
+}
+
+.item {
+  height: 20vh;
+}
+
+.attached {
+  display: flex;
+  width: auto;
+  /* margin-top: 10px; */
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aqua;
+  position: sticky;
+  bottom: 0px;
+  left: 5%;
+  right: 5%;
+}
+
 .under-navbar {
   margin-top: 56px;
+}
+
+/* .cartContainer {
+  position: relative;
+} */
+
+.cart {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cartNotification {
+  transform: translate(22px, -41px);
+  position: absolute;
+  padding: 4px 6px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.cartItemImage {
+  width: 30%;
+}
+
+.cartItemImage img{
+  border-radius: 5px;
+}
+
+.cartItemInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.removeCartItem {
+  display: flex;
+  align-items: center;
+  width: 10%;
+}
+
+.removeCartItem button {
+  background: none;
+  border: none;
+}
+
+.cartTotalSection {
+  display: flex;
+  width: auto;
+  /* margin-top: 10px; */
+  padding: 0 50px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aqua;
+  position: sticky;
+  bottom: 0px;
+  left: 5%;
+  right: 5%;
 }
 
 .listItem {

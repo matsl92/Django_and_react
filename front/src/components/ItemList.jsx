@@ -1,15 +1,10 @@
+import { useAppContext } from "../context/AppContext";
 import ListItem from "./ListItem";
 import { useState, useEffect } from 'react';
 
 function ItemList() {
 
-    const [products, setProducts] = useState([]);
-
-    const getProducts = async () => {
-        const response = await fetch('http://127.0.0.1:8000/api/product/list');
-        const data = await response.json();
-        setProducts(data);
-    }
+    const { getProducts, products } = useAppContext();
 
     useEffect(() => {
         getProducts();

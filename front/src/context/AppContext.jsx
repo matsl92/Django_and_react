@@ -8,6 +8,14 @@ export function useAppContext(){
 
 export function AppProvider({ children }) {
 
+    const [products, setProducts] = useState([]);
+
+    async function getProducts() {
+        const response = await fetch('http://127.0.0.1:8000/api/product/list');
+        const data = await response.json();
+        setProducts(data);
+    }
+
     const [cartItems, setCartItems] = useState([]);
 
     function getItemQuantity(id) {
@@ -57,7 +65,10 @@ export function AppProvider({ children }) {
             getItemQuantity,
             increaseItemQuantity,
             decreaseItemQuantity,
-            removeItemFromCart
+            removeItemFromCart,
+            getProducts,
+            cartItems,
+            products
         }}>
             { children }
         </AppContext.Provider>
