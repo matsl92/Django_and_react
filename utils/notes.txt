@@ -1,6 +1,6 @@
 TO DO
 
-Create main react components for e-commerce
+Working on item detail
 
 React components
 •	ListItem
@@ -8,16 +8,46 @@ React components
 •	ShippingInfo
 •	CartItem
 •	Navbar
+•	Cart aside
 
 React pages
-•	Cart
-•	ProductDetail
-•	ItemList
-•	Home 
+
+•	Home:
+    This page is usually changing. It includes promotions according to up coming special 
+    dates, and uses design images. It may also include a section for some of the best 
+    seller products, another one for New products and a little section with the steps to 
+    easily complete the process of purchasing. Finally there is usually a footer that 
+    could include links to social media, contacts, link to become a distributor.
+
+•	ItemList:
+    This page displays a list of products based on categories, string filters, etc.
+
+    Add to cart button
+
+•	ProductDetail:
+    Page for showing details related to a product.
+    This includes a slider for all the images of the product.
+
+    Add to cart button
+
+•	Cart:
+    This page beside listing the products and the modifiable quantity, gives information about the total, some variable shipping expenses, an input for discount coupons
+
+    Checkout button (sends to checkout page)
+
+•	Checkout:
+    Messages about the importance of valid and accurate data for each input in the form.
+    The form asks for personal data, shipping info and some additional and optional info related
+
+    Gateway logos and button
+
+•	Login:
+
+•	Register:
 
 
-•	Login
-•	Register
+
+COMMENTS
 
 
 
@@ -25,10 +55,22 @@ React pages
 
 DONE
 
+Cart data is stored in session storage
+
 Database can be modified by an external agent through rest_api app.
 
 React app is allowed to make more than just get requests getting a token from the backend
 
+React components
+•	ListItem
+•	ItemDetail
+•	ShippingInfo
+•	CartItem
+•	Navbar
+•	Cart aside
+
+React pages
+•	ItemList:
 
 
 API ENDPOINTS

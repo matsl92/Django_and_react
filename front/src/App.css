@@ -6,6 +6,12 @@
 
 body {
   background-color: rgb(255, 255, 255);
+  padding-top: 56px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .myContainer {
@@ -15,12 +21,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-grow: 1;
 }
 
 .scroll {
   height: 70vh;
-  background-color: aqua;
+  background-color: rgb(91, 165, 165);
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .item {
@@ -29,31 +36,29 @@ body {
 
 .attached {
   display: flex;
-  width: auto;
-  /* margin-top: 10px; */
+  height: 20vh;
   padding: 0 50px;
   justify-content: space-between;
   align-items: center;
-  background-color: aqua;
-  position: sticky;
-  bottom: 0px;
-  left: 5%;
-  right: 5%;
+  background-color: rgb(107, 138, 138);
 }
 
-.under-navbar {
-  margin-top: 56px;
+.offcanvas-header {
+  height: 62px;
 }
 
-/* .cartContainer {
-  position: relative;
-} */
+.cartContainer {
+  height: calc(100vh - 62px);
+  overflow: hidden;
+  padding: 0;
+}
 
 .cart {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .cartNotification {
@@ -63,6 +68,13 @@ body {
   background-color: red;
   color: white;
   border-radius: 50%;
+}
+
+.cartItemList {
+  background-color: rgb(233 237 237);
+  height: 92%;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .cartItem {
@@ -80,15 +92,17 @@ body {
 }
 
 .cartItemInfo {
-  width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 50%;
+  padding: 8px 0;
 }
 
 .removeCartItem {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 10%;
 }
 
@@ -100,15 +114,28 @@ body {
 .cartTotalSection {
   display: flex;
   width: auto;
-  /* margin-top: 10px; */
+  height: 8%;
   padding: 0 50px;
   justify-content: space-between;
   align-items: center;
-  background-color: aqua;
+  /* background-color: aqua; */
   position: sticky;
   bottom: 0px;
   left: 5%;
   right: 5%;
+}
+
+.totalUnitPrice {
+  display: flex;
+  gap: 7px;
+}
+
+.totalUnitPrice h6 {
+  line-height: normal;
+}
+
+.cartItemInfo > h6 {
+  text-align: end;
 }
 
 .listItem {

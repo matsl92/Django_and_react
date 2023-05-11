@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 
 function Home() {
     return (
-        <div className="home under-navbar">
+        <div className="home">
             <Navbar />
             <h1>Home</h1>
         </div>

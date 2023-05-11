@@ -1,5 +1,6 @@
 import CurrencyFormater from "../utilities/CurrencyFormater";
 import { useAppContext } from "../context/AppContext";
+import { Link } from "react-router-dom";
 
 function ListItem({ id, name, price, image, description }) {
 
@@ -21,7 +22,9 @@ function ListItem({ id, name, price, image, description }) {
                 style={{objectFit: "cover", objectPosition: "center"}}/>
 
                 <div className="listItemTextContainer">
-                    <h4 className="listItemTitle"><strong>{name}</strong></h4>
+                    <Link to={`product/${id}`}>
+                        <h4 className="listItemTitle"><strong>{name}</strong></h4>
+                    </Link>
                     <p>{description.slice(0, 25)}</p>
                     <p><strong>{CurrencyFormater(price)}</strong></p>
                 </div>

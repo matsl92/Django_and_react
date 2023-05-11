@@ -7,8 +7,6 @@ function Navbar() {
 
     const { cartItems } = useAppContext();
 
-    const nItems = cartItems.length;
-
     return (
         <nav className="navbar navbar-dark bg-dark fixed-top">
             <div className="container-fluid">
@@ -49,26 +47,27 @@ function Navbar() {
                     </div>
                 </div>
 
-
                 <Link to='/' className="navbar-brand">The Brand</Link>
-
   
                 <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                     <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" stroke="20" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16"> <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
-                    
-                    
-                    <div className="cartNotification">{nItems}</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" stroke="20" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16"> <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>                    
+                    {cartItems.length!== 0? <div className="cartNotification">{cartItems.length}</div> : null}                  
                     </span>
                 </button>
                 
                 <div className="offcanvas offcanvas-end" data-bs-scroll="true" tabIndex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
                     <div className="offcanvas-header">
-                        <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+                        {
+                            cartItems.length > 0? 
+                            <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">Productos seleccionados</h5>
+                            : 
+                            <h5 className="offcanvas-title" id="offcanvasWithBothOptionsLabel">No hay productos seleccionados</h5>
+
+                        }
                         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div className="offcanvas-body cartContainer">
-                        <p>Try scrolling the rest of the page to see this option in action.</p>
                         <Cart />
                     </div>
                 </div>

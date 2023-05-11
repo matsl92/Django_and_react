@@ -16,7 +16,12 @@ function CartItem({id, name, price, image, quantity}) {
             </div>
             <div className="cartItemInfo">
                 <h5>{name}</h5>
-                <span>x{quantity}</span>
+                {quantity > 1? 
+                <div className="totalUnitPrice">
+                    <h6>{CurrencyFormater(price)}</h6>
+                    <span>x{quantity}</span>
+                </div> 
+                : null}
                 <h6>{CurrencyFormater(price*quantity)}</h6>
             </div>
             <div className="removeCartItem">

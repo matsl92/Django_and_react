@@ -12,7 +12,7 @@ function ItemList() {
 
     return (
         <div className="container"> 
-            <div className="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 itemList under-navbar d-flex justify-content-center flex-direction-row">
+            <div className="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 itemList d-flex justify-content-center flex-direction-row">
                 
                 {
                     products.map((product, index) => (
