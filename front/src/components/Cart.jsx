@@ -1,15 +1,10 @@
 import { useAppContext } from "../context/AppContext";
-import { useEffect } from "react";
 import CartItem from "./CartItem";
 import CurrencyFormater from "../utilities/CurrencyFormater";
 
 function Cart() {
 
     const { cartItems, products, getProducts } = useAppContext();
-
-    useEffect(() => {
-        getProducts();
-    }, [])
 
     if (products.length > 0) {
         const cartTotal = cartItems.reduce((subTotal, item) => {

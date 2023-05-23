@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const AppContext = createContext({});
@@ -9,6 +9,8 @@ export function useAppContext(){
 
 export function AppProvider({ children }) {
 
+    const proxyURL = "http://127.0.0.1:8000/"
+
     const [products, setProducts] = useState([]);
 
     async function getProducts() {
@@ -18,6 +20,10 @@ export function AppProvider({ children }) {
     }
 
     const [cartItems, setCartItems] = useLocalStorage();
+
+    useEffect(() => {
+        getProducts();
+    }, [])
 
     function getItemQuantity(id) {
         return cartItems.find(item => item.id === id)?.quantity || 0;
@@ -69,7 +75,8 @@ export function AppProvider({ children }) {
             removeItemFromCart,
             getProducts,
             cartItems,
-            products
+            products,
+            proxyURL
         }}>
             { children }
         </AppContext.Provider>

@@ -1,14 +1,9 @@
 import { useAppContext } from "../context/AppContext";
 import ListItem from "./ListItem";
-import { useState, useEffect } from 'react';
 
 function ItemList() {
 
-    const { getProducts, products } = useAppContext();
-
-    useEffect(() => {
-        getProducts();
-    }, [])
+    const { products } = useAppContext();
 
     return (
         <div className="container"> 

@@ -2,17 +2,19 @@ function Test() {
 
     return (
         <div className="myContainer">
-            <div className="scroll">
-                <div className="item">hola</div>
-                <div className="item">hola</div>
-                <div className="item">hola</div>
-                <div className="item">hola</div>
-                <div className="item">hola</div>
-                <div className="item">hola</div>
-                <div className="item">hola</div>
+            <div className="innerContainer">
+                <div className="scroll">
+                    <div className="item">7  .</div>
+                    <div className="item">6  .</div>
+                    <div className="item">5  .</div>
+                    <div className="item">4  .</div>
+                    <div className="item">3  .</div>
+                    <div className="item">2  .</div>
+                    <div className="item">1  .</div>
+                </div>
             </div>
-            <div className="attached">
-                price: $200.000
+            <div className="fixed">
+                fixed
             </div>
         </div>
     )

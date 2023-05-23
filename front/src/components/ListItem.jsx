@@ -15,12 +15,13 @@ function ListItem({ id, name, price, image, description }) {
         <div className="col listItem mx-3">
             <div className="newLabel">Nuevo</div>
             <div className="itemCard">
-                <img src={image} 
-                alt="nothing" 
-                height="250px"
-                width="100%"
-                style={{objectFit: "cover", objectPosition: "center"}}/>
-
+                <Link to={`product/${id}`}>
+                    <img src={image} 
+                    alt="Imagen del producto" 
+                    height="250px"
+                    width="100%"
+                    style={{objectFit: "cover", objectPosition: "center"}}/>
+                </Link>
                 <div className="listItemTextContainer">
                     <Link to={`product/${id}`}>
                         <h4 className="listItemTitle"><strong>{name}</strong></h4>
